@@ -1,0 +1,234 @@
+/* === HEADER / NAVEGACIÓN === */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(253, 249, 243, 0.95);
+  /* El color de fondo crema (FDF9F3) un poco transparente */
+  backdrop-filter: blur(8px);
+  /* Efecto vidrio esmerilado */
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-accent);
+}
+
+/* Menú en celulares */
+.nav__links {
+  display: flex;
+  /* Ya no usamos 'none' */
+  flex-direction: column;
+  gap: var(--space-6);
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: var(--color-bg);
+  padding: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+  z-index: 90;
+
+  /* Magia de la animación: invisible y un poco más arriba */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all var(--transition);
+}
+
+/* Estado del menú cuando se abre */
+.nav__links.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  /* Baja a su posición original */
+}
+
+.nav__links a {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav__links a:hover {
+  color: var(--color-accent);
+}
+
+/* Botón hamburguesa */
+.nav__toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-2);
+}
+
+.nav__toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--color-text);
+  transition: all var(--transition);
+}
+
+/* Adaptación para pantallas grandes (Desktop) */
+@media (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+    /* Ocultamos la hamburguesa en PC */
+  }
+
+  .nav__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    background: transparent;
+    padding: 0;
+    border: none;
+
+    /* Reseteamos la animación para PC para que se vea siempre */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+/* === HERO SECTION === */
+.hero {
+  padding: var(--space-16) 0;
+  text-align: center;
+  background-color: var(--color-surface);
+  /* Fondo mantequilla para separarlo del menú de productos */
+  border-bottom: 1px solid var(--color-border);
+  
+  /* Imagen de fondo con filtro color mantequilla para que las letras se lean bien */
+  background-image: linear-gradient(rgba(234, 213, 193, 0.85), rgba(234, 213, 193, 0.85)), url('../assets/images/fondo-hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__logo {
+  max-width: 250px; /* Tamaño generoso para que se lea perfecto */
+  margin: 0 auto var(--space-6) auto;
+  display: block;
+  border-radius: 16px; /* Le damos bordes suavemente redondeados */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra elegante para "despegarlo" del fondo */
+  background-color: #ffffff; /* Asegura que el blanco del logo quede como una etiqueta */
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+}
+
+.hero__subtitle {
+  color: var(--color-muted);
+  font-size: var(--text-lg);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 6rem 0;
+  }
+
+  .hero__title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Animación X cuando el menú está abierto */
+.nav__toggle.is-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav__toggle.is-active span:nth-child(2) {
+  opacity: 0;
+  /* Oculta la rayita del medio */
+}
+
+.nav__toggle.is-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* === SPLIT (2 columnas para la historia) === */
+.split {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.split__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* En la compu, se divide en 2 columnas iguales */
+@media (min-width: 768px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+/* === FOOTER === */
+.footer {
+  background: var(--color-text);
+  color: var(--color-inverse);
+  padding: var(--space-8) 0;
+  text-align: center;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-inverse);
+}
+
+.footer__tagline {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--text-sm);
+}
+
+.footer__links {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__links a {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: var(--text-sm);
+  transition: color var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--color-inverse);
+}
+
+.footer__copy {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: var(--text-sm);
+}

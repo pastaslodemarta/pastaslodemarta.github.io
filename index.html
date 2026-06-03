@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Pastas artesanales elaboradas en el día. Sorrentinos, ravioles y cintas al huevo. Pedí online y coordinamos la entrega." />
+  <meta property="og:title" content="Pastas Lo de Marta" />
+  <meta property="og:description" content="Sorrentinos, ravioles y cintas al huevo. Pedí por WhatsApp con un clic." />
+  <meta property="og:type" content="website" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍝</text></svg>" />
+  <title>Pastas Artesanales | Hechas en el día</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Pastas lo de Marta</a>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button class="nav__cart" id="btnAbrirCarrito" aria-label="Ver carrito">
+          🛒 <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <button class="nav__toggle" aria-label="Abrir menú" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#productos">Nuestras Pastas</a></li>
+        <li><a href="historia.html">Historia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <img src="assets/images/logo.jpg" alt="Logo Pastas Lo de Marta" class="hero__logo" loading="lazy"
+        onerror="this.style.display='none'">
+      <h1 class="hero__title">Cocina como la de antes, para compartir hoy</h1>
+      <p class="hero__subtitle">
+        Llevamos el sabor de la tradición a tu mesa. Elaboración diaria con ingredientes frescos y de primera calidad.
+      </p>
+      <div class="hero__actions">
+        <a href="#productos" class="btn btn--primary">Ver el menú</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="productos">
+    <div class="container">
+      <h2 class="section__title" style="text-align: center;">Nuestras Especialidades</h2>
+      <p class="section__subtitle" style="text-align: center;">Elaboradas en el día, listas para disfrutar.</p>
+
+      <div class="grid grid--3">
+        <!-- PRODUCTO 1 -->
+        <article class="card">
+          <img src="assets/images/CALABAZA.jpg" alt="Sorrentinos de Calabaza y mozzarella" class="card__image"
+            loading="lazy"
+            onerror="this.outerHTML='<div class=\'card__image-placeholder\'>📷 Sorrentinos de Calabaza</div>'">
+          <div class="card__content">
+            <h3 class="card__title">Calabaza y Mozzarella</h3>
+            <p class="card__text" style="margin-bottom: 1rem;">Un toque dulzón de la calabaza asada que se funde
+              perfectamente con la mozzarella. Un clásico irresistible.</p>
+            <button class="btn btn--ghost btn--full btn-agregar" data-nombre="Sorrentinos Calabaza y Mozzarella">Agregar
+              al carrito</button>
+          </div>
+        </article>
+
+        <!-- PRODUCTO 2 -->
+        <article class="card">
+          <img src="assets/images/JAMON Y QUESO.jpg" alt="Sorrentinos de Jamón y queso" class="card__image"
+            loading="lazy"
+            onerror="this.outerHTML='<div class=\'card__image-placeholder\'>📷 Sorrentinos de Jamón</div>'">
+          <div class="card__content">
+            <h3 class="card__title">Jamón y Mozzarella</h3>
+            <p class="card__text" style="margin-bottom: 1rem;">El clásico de siempre que nunca falla, con abundante
+              relleno. Ideal para grandes y chicos.</p>
+            <button class="btn btn--ghost btn--full btn-agregar" data-nombre="Sorrentinos Jamón y Mozzarella">Agregar al
+              carrito</button>
+          </div>
+        </article>
+
+        <!-- PRODUCTO 3 -->
+        <article class="card">
+          <img src="assets/images/OSOBUCO.jpg" alt="Sorrentinos de Osobuco" class="card__image" loading="lazy"
+            onerror="this.outerHTML='<div class=\'card__image-placeholder\'>📷 Sorrentinos de Osobuco</div>'">
+          <div class="card__content">
+            <h3 class="card__title">Osobuco al Malbec</h3>
+            <p class="card__text" style="margin-bottom: 1rem;">Carne súper tierna de cocción lenta desmechada, abrazada
+              por una deliciosa reducción de Malbec.</p>
+            <button class="btn btn--ghost btn--full btn-agregar" data-nombre="Sorrentinos Osobuco al Malbec">Agregar al
+              carrito</button>
+          </div>
+        </article>
+
+        <!-- PRODUCTO 4 -->
+        <article class="card">
+          <img src="assets/images/RICOTA, ROQUEFORT Y NUEZ.jpg" alt="Sorrentinos de Ricota y Roquefort"
+            class="card__image" loading="lazy"
+            onerror="this.outerHTML='<div class=\'card__image-placeholder\'>📷 Sorrentinos Ricota y Roquefort</div>'">
+          <div class="card__content">
+            <h3 class="card__title">Ricota, Roquefort y Nuez</h3>
+            <p class="card__text" style="margin-bottom: 1rem;">Una combinación de sabores intensos y cremosos, coronada
+              con el toque crocante de la nuez.</p>
+            <button class="btn btn--ghost btn--full btn-agregar"
+              data-nombre="Sorrentinos Ricota, Roquefort y Nuez">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <!-- PRODUCTO 5 -->
+        <article class="card">
+          <img src="assets/images/POLLO Y VERDURAS.jpg" alt="Sorrentinos de Pollo y Verduras" class="card__image"
+            loading="lazy"
+            onerror="this.outerHTML='<div class=\'card__image-placeholder\'>📷 Sorrentinos Pollo y Verduras</div>'">
+          <div class="card__content">
+            <h3 class="card__title">Pollo y Verduras</h3>
+            <p class="card__text" style="margin-bottom: 1rem;">Relleno suave, súper nutritivo y delicioso, salteado al
+              punto justo con nuestras verduras frescas.</p>
+            <button class="btn btn--ghost btn--full btn-agregar" data-nombre="Sorrentinos Pollo y Verduras">Agregar al
+              carrito</button>
+          </div>
+        </article>
+
+        <!-- PRODUCTO 6 -->
+        <article class="card">
+          <img src="assets/images/CHEESEBURGER.jpg" alt="Sorrentinos Cheeseburger" class="card__image" loading="lazy"
+            onerror="this.outerHTML='<div class=\'card__image-placeholder\'>📷 Sorrentinos Cheeseburger</div>'">
+          <div class="card__content">
+            <h3 class="card__title">Cheeseburger</h3>
+            <p class="card__text" style="margin-bottom: 1rem;">¡Una bomba de sabor! Todo el gusto de una hamburguesa con
+              cheddar, envuelta en nuestra masa artesanal.</p>
+            <button class="btn btn--ghost btn--full btn-agregar" data-nombre="Sorrentinos Cheeseburger">Agregar al
+              carrito</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="cartModal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3 style="font-family: var(--font-display); font-size: var(--text-2xl);">Tu Pedido</h3>
+        <button class="modal__close" id="btnCerrarCarrito">✖</button>
+      </div>
+
+      <div class="modal__body" id="cartItems">
+        <p style="text-align: center; color: var(--color-muted);">El carrito está vacío</p>
+      </div>
+
+      <div class="modal__footer">
+        <div class="form__group" style="margin-bottom: var(--space-4);">
+          <label for="clienteNombre">Tu nombre <span style="color: var(--color-accent);">*</span></label>
+          <input type="text" id="clienteNombre" placeholder="Ej: María García" autocomplete="name" />
+        </div>
+        <button class="btn btn--primary btn--full" id="btnEnviarWhatsApp">
+          📲 Enviar pedido por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section--alt" id="contacto">
+    <div class="container">
+      <h2 class="section__title" style="text-align: center;">¿Cómo hacer tu pedido?</h2>
+      <p class="section__subtitle" style="text-align: center;">Tres pasos, sin complicaciones</p>
+
+      <div class="how-steps">
+        <div class="how-step">
+          <span class="how-step__icon">🛒</span>
+          <h3 class="how-step__title">Elegí tus pastas</h3>
+          <p class="how-step__text">Navegá por nuestro menú y agregá al carrito lo que más te guste.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-step__icon">✍️</span>
+          <h3 class="how-step__title">Ponés tu nombre</h3>
+          <p class="how-step__text">En el carrito, escribí tu nombre para identificar tu pedido.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-step__icon">📲</span>
+          <h3 class="how-step__title">Enviás por WhatsApp</h3>
+          <p class="how-step__text">Con un clic, tu pedido llega directo a nuestro WhatsApp y coordinamos.</p>
+        </div>
+      </div>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <span class="info-card__icon">🕐</span>
+          <div>
+            <strong>Horario de pedidos</strong>
+            <p>Abierto en cualquier momento de la semana</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-card__icon">📦</span>
+          <div>
+            <strong>Entregas a domicilio</strong>
+            <p>Todos los sábados en General Alvear, Bowen y San Rafael</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="footer__logo">Pastas lo de Marta</a>
+      <p class="footer__tagline">Cocina como la de antes, para compartir hoy 🍝</p>
+      <nav class="footer__links">
+        <a href="index.html#productos">Nuestras Pastas</a>
+        <a href="historia.html">Nuestra Historia</a>
+        <a href="index.html#contacto">Cómo pedir</a>
+      </nav>
+      <p class="footer__copy">© 2025 &middot; Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+/* Reset moderno para limpiar estilos por defecto */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Para que al hacer clic en el menú baje suavemente */
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  /* Evita que la página se mueva hacia los costados en celulares */
+}
+
+/* Las imágenes siempre se van a adaptar al ancho de la pantalla */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  /* Saca los puntitos feos de las listas */
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Una clase utilitaria para centrar el contenido de la página */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* === SECCIONES Y GRID === */
+.section {
+  padding: var(--space-16) 0;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-2);
+}
+
+.section__subtitle {
+  color: var(--color-muted);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-8);
+}
+
+/* El contenedor que agrupa las tarjetas */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* Por defecto (celulares) es 1 sola columna */
+.grid--3 {
+  grid-template-columns: 1fr;
+}
+
+/* En pantallas más grandes (PC o tablets horizontales) pasa a 3 columnas */
+@media (min-width: 768px) {
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Fondo alternativo para destacar secciones */
+.section--alt {
+  background-color: var(--color-surface);
+}
+
+/* Comodín para la foto nostálgica */
+.image-placeholder--nostalgic {
+  height: 350px;
+  background-color: #D7D3C8;
+  /* Un tono apenas más oscurito, tipo papel viejo */
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-style: italic;
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 768px) {
+  .image-placeholder--nostalgic {
+    height: 450px;
+    /* En la compu la foto es más grande */
+  }
+}
