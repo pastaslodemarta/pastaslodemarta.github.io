@@ -57,6 +57,7 @@ button {
 /* === SECCIONES Y GRID === */
 .section {
   padding: var(--space-16) 0;
+  scroll-margin-top: 80px; /* Evita que el menú pegajoso tape el título al hacer clic en un enlace */
 }
 
 .section__title {
